@@ -179,8 +179,9 @@ insert into silver.crm_prd_info (
 prd_id,cat_id,prd_key,prd_nm,prd_cost,prd_line,prd_start_dt,prd_end_dt
 )
  select prd_id,
+ REPLACE(SUBSTRING(prd_key,1,5),'-','_')  as cat_id, -- derived columns 
 SUBSTRING(prd_key,7,len(prd_key)) as prd_key,
-REPLACE(SUBSTRING(prd_key,1,5),'-','_')  as cat_id, -- derived columns 
+
 prd_nm,
 case 
 when prd_cost < 0 then 0
@@ -197,7 +198,8 @@ cast( prd_start_dt as date) as prd_start_dt, -- datatype casting
 cast ((LEAD(prd_start_dt) over (partition by prd_key order by prd_start_dt) -1 ) as date)  as prd_end_dt -- data enrichment 
 from bronze.crm_prd_info 
 where   REPLACE(SUBSTRING(prd_key,1,5),'-','_')  in (select distinct id from bronze.erp_px_cat_g1v2)
-and   SUBSTRING(prd_key,7,len(prd_key)) not in (select distinct sls_prd_key from bronze.crm_sales_details);
+and   SUBSTRING(prd_key,7,len(prd_key))  in (select distinct sls_prd_key from bronze.crm_sales_details);
+
 
 select SUBSTRING(prd_key,7,len(prd_key)) from  bronze.crm_prd_info;
 select distinct sls_prd_key from bronze.crm_sales_details
