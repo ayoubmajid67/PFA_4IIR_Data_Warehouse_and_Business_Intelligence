@@ -18,7 +18,7 @@ declare @start_time datetime , @end_time datetime , @batch_start_time datetime, 
  print '> Truncating Table : bronze.crm_cust_info';
  truncate table bronze.crm_cust_info;
 
- bulk insert bronze.crm_cust_info from 'C:\vs code\GitHub\sql-data-warehouse-project-Baraa\datasets\source_crm\cust_info.csv'
+ bulk insert bronze.crm_cust_info from 'C:\vs code\GitHub\EMSI-projects\sql-data-warehouse-project-Baraa\datasets\source_crm\cust_info.csv'
 	with (
 	firstrow =2,
 	fieldterminator=',',
@@ -35,7 +35,7 @@ declare @start_time datetime , @end_time datetime , @batch_start_time datetime, 
 
 		PRINT '>> Inserting Data Into: bronze.crm_prd_info';
 		BULK INSERT bronze.crm_prd_info
-		FROM 'C:\vs code\GitHub\sql-data-warehouse-project-Baraa\datasets\source_crm\prd_info.csv'
+		FROM 'C:\vs code\GitHub\EMSI-projects\sql-data-warehouse-project-Baraa\datasets\source_crm\prd_info.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -50,7 +50,7 @@ declare @start_time datetime , @end_time datetime , @batch_start_time datetime, 
 		TRUNCATE TABLE bronze.crm_sales_details;
 		PRINT '>> Inserting Data Into: bronze.crm_sales_details';
 		BULK INSERT bronze.crm_sales_details
-		FROM 'C:\vs code\GitHub\sql-data-warehouse-project-Baraa\datasets\source_crm\sales_details.csv'
+		FROM 'C:\vs code\GitHub\EMSI-projects\sql-data-warehouse-project-Baraa\datasets\source_crm\sales_details.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -71,7 +71,7 @@ declare @start_time datetime , @end_time datetime , @batch_start_time datetime, 
 		TRUNCATE TABLE bronze.erp_loc_a101;
 		PRINT '>> Inserting Data Into: bronze.erp_loc_a101';
 		BULK INSERT bronze.erp_loc_a101
-		FROM 'C:\vs code\GitHub\sql-data-warehouse-project-Baraa\datasets\source_erp\loc_a101.csv'
+		FROM 'C:\vs code\GitHub\EMSI-projects\sql-data-warehouse-project-Baraa\datasets\source_erp\loc_a101.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -86,7 +86,7 @@ declare @start_time datetime , @end_time datetime , @batch_start_time datetime, 
 		TRUNCATE TABLE bronze.erp_cust_az12;
 		PRINT '>> Inserting Data Into: bronze.erp_cust_az12';
 		BULK INSERT bronze.erp_cust_az12
-		FROM 'C:\vs code\GitHub\sql-data-warehouse-project-Baraa\datasets\source_erp\cust_az12.csv'
+		FROM 'C:\vs code\GitHub\EMSI-projects\sql-data-warehouse-project-Baraa\datasets\source_erp\cust_az12.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -101,7 +101,7 @@ declare @start_time datetime , @end_time datetime , @batch_start_time datetime, 
 		TRUNCATE TABLE bronze.erp_px_cat_g1v2;
 		PRINT '>> Inserting Data Into: bronze.erp_px_cat_g1v2';
 		BULK INSERT bronze.erp_px_cat_g1v2
-		FROM 'C:\vs code\GitHub\sql-data-warehouse-project-Baraa\datasets\source_erp\px_cat_g1v2.csv'
+		FROM 'C:\vs code\GitHub\EMSI-projects\sql-data-warehouse-project-Baraa\datasets\source_erp\px_cat_g1v2.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
