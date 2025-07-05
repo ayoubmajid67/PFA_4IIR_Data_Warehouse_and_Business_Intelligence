@@ -73,23 +73,37 @@ Key components:
 
 ## 📂 Repository Structure
 
-```
-bi-data-warehouse-project/
+sql-data-warehouse-project/
 
-├── datasets/                          # Raw CSV sales data files  
-├── docs/                             # Documentation, diagrams, and dashboards images  
-│   ├── data_architecture.png          # Architecture diagram  
-│   ├── geographical_sales_map.png     # Sales map visualization  
-│   ├── sales_analysis_dashboard.png   # Analysis dashboard screenshot  
-│   └── other_docs/                    # Additional documentation  
-├── scripts/                          # ETL and transformation SQL/Python scripts  
-├── tests/                            # Data quality and validation tests  
-├── README.md                        # This file  
-├── LICENSE                         # License information  
-└── .gitignore                      # Git ignore rules  
-```
+├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+│
+├── docs/                               # Project documentation and architecture details
+│   ├── bronze/                         # Bronze layer documentation
+│   ├── silver/                         # Silver layer documentation
+│   ├── data_catalog/                   # Data catalog and metadata
+│   ├── naming_conventions/             # Naming standards and conventions
+│   ├── report/                         # Reporting documentation
+│   ├── data_architecture.png           # Architecture diagram
+│   ├── data_flow.png                   # Data flow diagram
+│   ├── data_integration.png            # Data integration diagram
+│   ├── data_model.png                  # Data model diagram
+│   ├── data_layers.pdf                 # Detailed data layers documentation
+│   ├── ETL.png                         # ETL process diagram
+│   └── Project_Notes_Sketches.pdf      # Project planning and notes
+│
+├── scripts/                            # SQL scripts for ETL and transformations
+│   ├── bronze/                         # Scripts for extracting and loading raw data
+│   ├── silver/                         # Scripts for cleaning and transforming data
+│   └── gold/                           # Scripts for creating analytical models
+│
+├── image/                              
+│
+├── README.md                           # Project overview and instructions
+├── LICENSE                             # License information for the repository
+└── .gitignore                          # Files and directories to be ignored by Git
 
 ---
+
 
 ## ☕ Stay Connected
 
